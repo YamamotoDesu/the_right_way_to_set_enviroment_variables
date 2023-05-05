@@ -72,3 +72,10 @@ info.plist
 	<string>$(APP_NAME)</string>
 ```
 
+Default.xcconfig
+```
+APP_NAME=Batcave
+APP_SUFFIX=.dev
+MAPS_API_KEY=someKey
+```
+
