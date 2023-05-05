@@ -33,5 +33,11 @@ config.json
 }
 ```
 
+AndroidManifest.xml
+```xml
+android:label="@string/app_name"
+<meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="@string/googleMapApiKey"/>
+```
 
 
