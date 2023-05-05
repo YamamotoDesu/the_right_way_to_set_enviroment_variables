@@ -1,6 +1,5 @@
 # the_right_way_to_set_enviroment_variables
-
-A new Flutter project.
+https://itnext.io/secure-your-flutter-project-the-right-way-to-set-environment-variables-with-compile-time-variables-67c3163ff9f4
 
 ## Getting Started
 
