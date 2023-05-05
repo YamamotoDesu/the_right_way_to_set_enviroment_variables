@@ -68,7 +68,7 @@ info.plist
 ```
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)$(APP_SUFFIX)</string>
- <key>CFBundleName</key>
+        <key>CFBundleName</key>
 	<string>$(APP_NAME)</string>
 ```
 
