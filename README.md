@@ -62,7 +62,13 @@ def envVariables = [
     }
 ```
 
+
 ## iOS
-
-
+info.plist
+```plist
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)$(APP_SUFFIX)</string>
+ <key>CFBundleName</key>
+	<string>$(APP_NAME)</string>
+```
 
