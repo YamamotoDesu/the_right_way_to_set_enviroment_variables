@@ -24,6 +24,27 @@ flutter run --dart-define=baseUrl=https://github.com/mastersam07
 flutter run --dart-define-from-file=config.json
 ```
 
+For users of vs code, here is a sample launch.json
+```json
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "batcave",
+            "request": "launch",
+            "type": "dart",
+            "toolArgs": [
+                "--dart-define-from-file",
+                "config.json",
+            ],
+        }
+    ]
+}
+```
+
 ## Android
 config.json
 ```json
@@ -78,4 +99,11 @@ APP_NAME=Batcave
 APP_SUFFIX=.dev
 MAPS_API_KEY=someKey
 ```
+
+release and debug xcconfig
+```
+#include "Default.xcconfig"
+#include "Generated.xcconfig"
+```
+
 
