@@ -14,12 +14,12 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-# Dart define
+# ☑️ Dart define
 ```
 flutter run --dart-define=baseUrl=https://github.com/mastersam07
 ```
 
-# Dart define from file
+# ✅ Dart define from file
 ```
 flutter run --dart-define-from-file=config.json
 ```
