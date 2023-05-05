@@ -24,6 +24,7 @@ flutter run --dart-define=baseUrl=https://github.com/mastersam07
 flutter run --dart-define-from-file=config.json
 ```
 
+## Android
 config.json
 ```json
 {
@@ -39,5 +40,29 @@ android:label="@string/app_name"
 <meta-data android:name="com.google.android.geo.API_KEY"
             android:value="@string/googleMapApiKey"/>
 ```
+
+build.grale
+```gradle
+def envVariables = [
+    APP_NAME: project.hasProperty('APP_NAME')
+            ? APP_NAME
+            : 'batcave',
+    APP_SUFFIX: project.hasProperty('APP_SUFFIX')
+            ? APP_SUFFIX
+            : null,
+    MAPS_API_KEY: project.hasProperty('MAPS_API_KEY')
+            ? MAPS_API_KEY
+            : "someString",
+];
+
+    defaultConfig {
+          applicationIdSuffix envVariables.APP_SUFFIX
+          resValue "string", "app_name", envVariables.APP_NAME
+          resValue "string", "googleMapAqpiKey", envVariables.MAPS_API_KEY
+    }
+```
+
+## iOS
+
 
 
