@@ -1,0 +1,3 @@
+APP_NAME=Batcave
+APP_SUFFIX=.dev
+MAPS_API_KEY=someKey
