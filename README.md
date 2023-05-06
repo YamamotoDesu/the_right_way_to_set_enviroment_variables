@@ -24,6 +24,28 @@ flutter run --dart-define=baseUrl=https://github.com/mastersam07
 flutter run --dart-define-from-file=config.json
 ```
 
+For users of vs code, here is a sample launch.json
+```json
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "batcave",
+            "request": "launch",
+            "type": "dart",
+            "toolArgs": [
+                "--dart-define-from-file",
+                "config.json",
+            ],
+        }
+    ]
+}
+```
+
+## Android
 config.json
 ```json
 {
@@ -33,5 +55,57 @@ config.json
 }
 ```
 
+AndroidManifest.xml
+```xml
+android:label="@string/app_name"
+<meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="@string/googleMapApiKey"/>
+```
+
+build.grale
+```gradle
+def envVariables = [
+    APP_NAME: project.hasProperty('APP_NAME')
+            ? APP_NAME
+            : 'batcave',
+    APP_SUFFIX: project.hasProperty('APP_SUFFIX')
+            ? APP_SUFFIX
+            : null,
+    MAPS_API_KEY: project.hasProperty('MAPS_API_KEY')
+            ? MAPS_API_KEY
+            : "someString",
+];
+
+    defaultConfig {
+          applicationIdSuffix envVariables.APP_SUFFIX
+          resValue "string", "app_name", envVariables.APP_NAME
+          resValue "string", "googleMapAqpiKey", envVariables.MAPS_API_KEY
+    }
+```
+
+
+## iOS
+info.plist
+```
+        <key>CFBundleDisplayName</key>
+	<string>$(APP_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)$(APP_SUFFIX)</string>
+        <key>CFBundleName</key>
+	<string>$(APP_NAME)</string>
+```
+
+Default.xcconfig
+```
+APP_NAME=Batcave
+APP_SUFFIX=.dev
+MAPS_API_KEY=someKey
+```
+
+release and debug xcconfig
+```
+#include "Default.xcconfig"
+#include "Generated.xcconfig"
+```
 
 
